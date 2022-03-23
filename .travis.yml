@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "8"
+cache:
+  directories:
+    - node_modules
+env:
+  - TRAVIS_BUILD=true
+before_install:
+  - sudo apt-get install libgif-dev
+before_script:
+  - npm i truffle
+  - cd ./node_modules/truffle && npm install solc@0.4.25 && cd ../..
+  - truffle version
+script:
+  - npm run test
+  - npm run test:simulate
+  - npm run lint
