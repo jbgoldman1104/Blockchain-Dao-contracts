@@ -3,6 +3,12 @@ const LightWalletProvider = require('@digix/truffle-lightwallet-provider');
 const { KEYSTORE, PASSWORD } = process.env;
 
 if (!process.env.TRAVIS_BUILD) {
+  if (!KEYSTORE || !PASSWORD) { throw new Error('You must export KEYSTORE and PASSWORD (see truffle.js)'); }
+}
+
+module.exports = {
+  networks: {
+    kovan: {
       provider: new LightWalletProvider({
         keystore: KEYSTORE,
         password: PASSWORD,
