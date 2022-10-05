@@ -1,3 +1,4 @@
+const LightWalletProvider = require('@digix/truffle-lightwallet-provider');
 
 const { KEYSTORE, PASSWORD } = process.env;
 
