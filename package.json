@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Smart contracts for DigixDAO",
   "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "node_modules/.bin/truffle compile",
+    "test": "bash scripts/unit-test.sh",
     "test:simulate": "bash scripts/simulate-dao.sh",
     "test:deployment": "node_modules/.bin/truffle test test/deploymentTest.js",
     "lint": "./node_modules/.bin/eslint test/",
